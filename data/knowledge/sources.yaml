@@ -1,0 +1,21 @@
+sources:
+  - id: "ipcc_ar6_wg2_ch5"
+    title: "IPCC AR6 WGII Chapter 5: Food, Fibre, and Other Ecosystem Products"
+    author: "IPCC"
+    year: 2022
+    url: "https://www.ipcc.ch/report/ar6/wg2/downloads/report/IPCC_AR6_WGII_Chapter05.pdf"
+  - id: "fao_soc_2019"
+    title: "Soil Organic Carbon: the hidden potential"
+    author: "FAO"
+    year: 2017
+    url: "https://www.fao.org/3/a-i6937e.pdf"
+  - id: "icar_dryland_2020"
+    title: "Rainwater Harvesting and Utilization for Dryland Agriculture"
+    author: "ICAR"
+    year: 2020
+    url: "https://icar.org.in/"
+  - id: "icrisat_agroforestry_2018"
+    title: "Agroforestry in dryland ecosystems"
+    author: "ICRISAT"
+    year: 2018
+    url: "https://www.icrisat.org/"

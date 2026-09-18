@@ -1,0 +1,157 @@
+cards:
+  - id: "agroforestry_semi_arid"
+    name: "Silvopastoral Agroforestry"
+    description: "Integration of deep-rooted trees with pasture to improve microclimate and soil moisture."
+    preconditions:
+      min_rainfall: 400
+      max_rainfall: 800
+      max_ph: 8.5
+      land_use: ["pasture", "degraded", "arable"]
+    conflicts_with: ["intensive_monoculture", "clearcutting"]
+    effects:
+      - metric_id: "soc_percent"
+        value_change: 15.0
+        time_horizon_years: 5.0
+        confidence_score: 0.85
+        source_id: "ipcc_ar6_wg2_ch5"
+      - metric_id: "water_holding_capacity"
+        value_change: 10.0
+        time_horizon_years: 5.0
+        confidence_score: 0.80
+        source_id: "ipcc_ar6_wg2_ch5"
+      - metric_id: "biodiversity_index"
+        value_change: 20.0
+        time_horizon_years: 10.0
+        confidence_score: 0.75
+        source_id: "icrisat_agroforestry_2018"
+
+  - id: "legume_cover_cropping"
+    name: "Legume-based Cover Cropping"
+    description: "Planting nitrogen-fixing legumes during fallow periods to protect soil and increase fertility."
+    preconditions:
+      min_rainfall: 300
+      land_use: ["arable", "orchard"]
+    conflicts_with: ["bare_fallow"]
+    effects:
+      - metric_id: "soc_percent"
+        value_change: 8.0
+        time_horizon_years: 3.0
+        confidence_score: 0.90
+        source_id: "fao_soc_2019"
+      - metric_id: "soil_erosion_rate"
+        value_change: -40.0
+        time_horizon_years: 1.0
+        confidence_score: 0.95
+        source_id: "fao_soc_2019"
+
+  - id: "contour_bunding"
+    name: "Contour Bunding"
+    description: "Constructing small embankments along land contours to reduce runoff and soil erosion."
+    preconditions:
+      min_slope_percent: 2.0
+      max_slope_percent: 10.0
+      max_rainfall: 1000
+    conflicts_with: ["laser_leveling"]
+    effects:
+      - metric_id: "water_holding_capacity"
+        value_change: 25.0
+        time_horizon_years: 2.0
+        confidence_score: 0.85
+        source_id: "icar_dryland_2020"
+      - metric_id: "soil_erosion_rate"
+        value_change: -60.0
+        time_horizon_years: 1.0
+        confidence_score: 0.90
+        source_id: "icar_dryland_2020"
+
+  - id: "pollinator_strips"
+    name: "Native Flower Strips"
+    description: "Planting strips of native flowering plants at field margins."
+    preconditions:
+      land_use: ["arable", "pasture", "orchard"]
+    conflicts_with: ["broad_spectrum_pesticides"]
+    effects:
+      - metric_id: "pollinator_abundance"
+        value_change: 50.0
+        time_horizon_years: 2.0
+        confidence_score: 0.85
+        source_id: "ipcc_ar6_wg2_ch5"
+      - metric_id: "biodiversity_index"
+        value_change: 15.0
+        time_horizon_years: 3.0
+        confidence_score: 0.70
+        source_id: "ipcc_ar6_wg2_ch5"
+
+  - id: "reduced_tillage"
+    name: "Conservation Tillage (No-Till)"
+    description: "Minimizing soil disturbance to maintain structure and retain moisture."
+    preconditions:
+      land_use: ["arable"]
+      min_rainfall: 250
+    conflicts_with: ["deep_plowing"]
+    effects:
+      - metric_id: "soc_percent"
+        value_change: 12.0
+        time_horizon_years: 5.0
+        confidence_score: 0.85
+        source_id: "fao_soc_2019"
+      - metric_id: "water_holding_capacity"
+        value_change: 15.0
+        time_horizon_years: 5.0
+        confidence_score: 0.80
+        source_id: "fao_soc_2019"
+
+  - id: "riparian_buffers"
+    name: "Riparian Buffer Zones"
+    description: "Maintaining vegetated strips along waterways to filter runoff and provide habitat corridor."
+    preconditions:
+      has_water_body: true
+    conflicts_with: ["bank_cultivation"]
+    effects:
+      - metric_id: "soil_erosion_rate"
+        value_change: -70.0
+        time_horizon_years: 3.0
+        confidence_score: 0.90
+        source_id: "fao_soc_2019"
+      - metric_id: "biodiversity_index"
+        value_change: 30.0
+        time_horizon_years: 5.0
+        confidence_score: 0.85
+        source_id: "ipcc_ar6_wg2_ch5"
+
+  - id: "check_dams"
+    name: "Small Check Dams"
+    description: "Building small barriers across gullies or streams to slow water flow and enhance groundwater recharge."
+    preconditions:
+      has_water_body: true
+      max_rainfall: 1200
+    conflicts_with: []
+    effects:
+      - metric_id: "water_holding_capacity"
+        value_change: 40.0
+        time_horizon_years: 2.0
+        confidence_score: 0.85
+        source_id: "icar_dryland_2020"
+      - metric_id: "biodiversity_index"
+        value_change: 10.0
+        time_horizon_years: 3.0
+        confidence_score: 0.70
+        source_id: "icar_dryland_2020"
+
+  - id: "organic_mulching"
+    name: "Crop Residue Mulching"
+    description: "Leaving crop residues on the soil surface to reduce evaporation and moderate temperature."
+    preconditions:
+      land_use: ["arable", "orchard"]
+    conflicts_with: ["residue_burning", "clean_cultivation"]
+    effects:
+      - metric_id: "water_holding_capacity"
+        value_change: 15.0
+        time_horizon_years: 1.0
+        confidence_score: 0.90
+        source_id: "fao_soc_2019"
+      - metric_id: "soc_percent"
+        value_change: 5.0
+        time_horizon_years: 3.0
+        confidence_score: 0.85
+        source_id: "fao_soc_2019"
