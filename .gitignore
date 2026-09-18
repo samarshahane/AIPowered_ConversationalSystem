@@ -12,9 +12,8 @@ build/
 .env
 *.env
 
-# Database & Vector Store (generated — not committed)
+# Database & Vector Store
 verdant.db
-chroma_db/
 
 # PDFs in corpus (too large for git)
 data/corpus/*.pdf
