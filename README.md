@@ -2,6 +2,8 @@
 
 Verdant is an AI Biodiversity Intelligence system. It takes the measurable state of a land parcel and returns scientifically grounded interventions to improve biodiversity. 
 
+Deployed Link-: https://aipowered-conversationalsystem.onrender.com/
+
 ## Design Philosophy
 **The LLM never decides what is feasible.** Feasibility is handled purely by deterministic Python rules evaluating numeric preconditions against user inputs.
 
